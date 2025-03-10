@@ -28,7 +28,7 @@ const CartStore = create((set) => ({
         return true;
       }
     } catch (e) {
-       /* unauthorized(e.response.status); */
+       unauthorized(e.response.status);
     } finally {
       set({ isCartSubmit: false });
     }
@@ -63,7 +63,7 @@ const CartStore = create((set) => ({
       set({ CartVatTotal: vat });
       set({ CartPayableTotal: payable });
     } catch (e) {
-     /* unauthorized(e.response.status);  */
+     unauthorized(e.response.status); 
     }
   },
 
@@ -72,7 +72,7 @@ const CartStore = create((set) => ({
       set({ CartList: null });
       await axios.post(`/api/v1/RemoveCartList`, { _id: cartID });
     } catch (e) {
-     /* unauthorized(e.response.status); */
+     unauthorized(e.response.status);
     }
   },
 
@@ -82,7 +82,7 @@ const CartStore = create((set) => ({
       let res = await axios.get(`/api/v1/CreateInvoice`);
       window.location.href = res.data.data.GatewayPageURL;
     } catch (e) {
-       /* unauthorized(e.response.status); */
+       unauthorized(e.response.status);
     } finally {
       set({ isCartSubmit: false });
     }
@@ -94,7 +94,7 @@ const CartStore = create((set) => ({
       let res = await axios.get(`/api/v1/InvoiceList`);
       set({ InvoiceList: res.data.data });
     } catch (e) {
-  /*  unauthorized(e.response.status); */ 
+   unauthorized(e.response.status); 
     }
   },
 
@@ -104,7 +104,7 @@ try {
    let res = await axios.get(`/api/v1/InvoiceProductList/${id}`);
    set({ InvoiceDetails: res.data.data });
 } catch (e) {
-   /*  unauthorized(e.response.status);  */
+    unauthorized(e.response.status); 
 }
 
   }

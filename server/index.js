@@ -32,7 +32,7 @@ const _dirname = path.resolve();
 })
  */
 const corsOptions = {
-  origin: "https://localhost:5173",
+  origin: "http://localhost:5173",
   credentials: true,
 };
 app.use(cors(corsOptions));
@@ -52,7 +52,7 @@ app.use(limiter)
 app.set('etag', false);
 app.use("/api/v1",router)
 
-app.use(express.static('client/dist'));
+/* app.use(express.static('client/dist')); */
 
 // Add React Front End Routing
 app.use(express.static(path.join(_dirname, "/client/dist")));
