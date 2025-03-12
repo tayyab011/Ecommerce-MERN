@@ -5,7 +5,7 @@ import HomePage from './pages/home-page';
 import ProductByBrand from './pages/product-by-brand';
 import ProductByCategory from './pages/product-by-category';
 import ProductByKeyword from './pages/product-by-keyword';
-import ProductDetails from './pages/product-details.JSX';
+import ProductDetails from './pages/product-details.jsx';
 import AboutPage from './pages/about-page';
 import RefundPage from './pages/refund-page';
 import PrivacyPage from './pages/privacy-page';
